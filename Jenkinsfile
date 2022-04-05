@@ -1,11 +1,11 @@
 pipeline {
-    agent any
+    agent any # uses any pipeline
 
     stages {
         stage ('Build Image') {
             steps {
                 script {
-                    dockerapp = docker.build("fabricioveronez/api-produto:${env.BUILD_ID}", '-f ./src/Dockerfile ./src') 
+                    dockerapp = docker.build("amisaka/api-produto:${env.BUILD_ID}", '-f ./src/Dockerfile ./src') 
                 }                
             }
         }
